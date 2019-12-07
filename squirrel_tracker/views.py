@@ -14,3 +14,6 @@ def get_map(request):
                                 'sightings' :sight,
                                 }
                 return render(request, 'squirrel_tracker/map.html',context)
+
+def test():
+    pass
