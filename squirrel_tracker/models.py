@@ -9,13 +9,15 @@ class squirrel(models.Model):
     Y = models.DecimalField(
             help_text = _('Latitude'))
     Unique_squirrel_ID = models.CharField(
-            help_text=_('Hectare + Shift + Date + Hectare squirrel number'))
+            help_text=_('Hectare + Shift + Date + Hectare squirrel number'),
+            primary_key = True)
 
     Hectare = models.CharField(
             help_text=_('ID tag'))
 
     Shift = models.CharField(
-            help_text=_('AM or PM'))
+            help_text=_('AM or PM'),
+            choices = TIME)
 
     Date = models.DateField(
             help_text=_('Date when squirrel was spotted'))
@@ -24,10 +26,12 @@ class squirrel(models.Model):
             help_text=_('Number of squirrel sightings'))
 
     Age = models.CharField(
-            help_text=_('Adult or Juvenile'))
+            help_text=_('Adult or Juvenile'),
+            choices = AGE_CHOICES)
 
     Primary_Fur_Color = models.CharField(
-            help_text=_('gray, cinnamon or black'))
+            help_text=_('gray, cinnamon or black'),
+            choices = FUR_COLOR)
 
     Highlight_Fur_Color = models.CharFirled(
             help_text=_('Highlight color'))
@@ -39,7 +43,8 @@ class squirrel(models.Model):
             help_text=_('Notes on color'))
 
     Location = models.CharField(
-            help_text=_('Ground plane or above ground'))
+            help_text=_('Ground plane or above ground'),
+            choices = LOCATION)
 
     Above_Ground_Sighter_Measurement = models.CharField(
             help_text=_('False if location is above ground'))
@@ -67,42 +72,42 @@ class squirrel(models.Model):
 
     Kuks = models.BooleanField(
             help_text=_('Is  Squirrel kuking'),
-            default=False,
+            default=False
         )
 
 
     Quaas = models.BooleanField(
             help_text=_('Is  Squirrel quaaing'),
-            default=False,
+            default=False
         )
 
     Moans = models.BooleanField(
             help_text=_('Is Squirrel Moaning'),
-            default=False,
+            default=False
         )
 
     Tail_flags = models.BooleanField(
             help_text=_('Is Squirrel flagging tail'),
-            default=False,
+            default=False
         )
 
     Tail_twitching = models.BooleanField(
             help_text=_('Is the Squirrel twitching tail'),
-            default=False,
+            default=False
         )
 
     Approaches = models.BooleanField(
         help_text=_('Is Squirrel approaching human'),
-        default=False,
+        default=False
         )
 
     Indifferent = models.BooleanField(
             help_text=_('Is squirrel indifferent to human'),
-            default=False,
+            default=False
         )
     Runs_from = models.BooleanField(
             help_text=_('Is Squirrel running from human'),
-            default=False,
+            default=False
         )
 
     AM = 'AM'
@@ -115,20 +120,25 @@ class squirrel(models.Model):
     Cinnamon = 'CINAMMON'
     Black = 'BLACK'
 
-
     AGE_CHOICES = (
             (ADULT, 'ADULT'),
-            (JUVENILE, 'JUVENILE'),)
+            (JUVENILE, 'JUVENILE'))
 
-    TIME_CHOICES = (
+    TIME = (
             (AM, 'AM'),
-            (PM, 'PM'),)
+            (PM, 'PM'))
 
-
-    COLOR_CHOICES = (
+    FUR_COLOR = (
             (Gray, 'GRAY'),
             (Cinnamon, 'CINNAMON'),
-            (Black, 'BLACK'),)
+            (Black, 'BLACK'))
+
+    GROUND_PLANE = 'GROUND PLANE'
+    ABOVE_GROUND = 'ABOVE GROUND'
+
+    LOCATION= (
+            (GROUND_PLANE, 'GROUND PlANE'),
+            (ABOVE_GROUND, 'ABOVE GROUND'))
 
     def __str__(self):
         return self.Unique_squirrel_ID
