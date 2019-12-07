@@ -5,3 +5,6 @@ class squirrel(models.Model):
     X = models.DecimalField(
             help_text = _('Longitude')
             )
+
+    Y = models.DecimalField(
+            help_text = _('Latitude'))
