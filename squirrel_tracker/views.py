@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .models import Squirrel
+
 from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
@@ -9,11 +11,11 @@ def main_page(request):
     return render(request, 'squirrel_tracker/main.html',{'Squirrel': sq})
 
 def map_get(request):
-        sighting = Squirrel.objects.all()[:100]
-            context ={
-                                'sightings' :sighting,
+        sighting = Squirrel.objects.all()[:25]
+        context ={
+                'sightings' :sighting,
                                 }
-                return render(request, 'squirrel_tracker/map.html',context)
+        return render(request, 'squirrel_tracker/map.html',context)
 
 def sighting_get(request):
     sqs = Squirrel.objects.all()
@@ -31,11 +33,11 @@ def edit_sq(request, Unique_squirrel_ID):
             return redirect(f'/sightings')
     else:
         form = SquirrelForm(instance= squirrel)
-    context ={
+        context ={
             'form':form
         }
 
-    return render(request,'squirrel_tracker/edit.html',context)
+        return render(request,'squirrel_tracker/edit.html',context)
 
 def add_sq(request):
     if request.method == "POST":
@@ -45,10 +47,10 @@ def add_sq(request):
             return redirect(f'/sightings')
     else:
         form = SquirrelForm()
-    context ={
+        context ={
             'form':form,
         }
-    return render(request,'squirrel_tracker/edit.html',context)
+        return render(request,'squirrel_tracker/edit.html',context)
 
 def stats(request):
     count_am = 0
