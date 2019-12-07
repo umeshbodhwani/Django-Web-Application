@@ -16,11 +16,10 @@ class Command(BaseCommand):
             sq_data = list(reader)
 
         for item in sq_data:
-            s = Squirrel
-            (
-                X=item['X'],
-                Y=item['Y'],
-                Shift=item['Shift'],
+            s = Squirrel(
+                    X=item['X'],
+                    Y=item['Y'],
+                    Shift=item['Shift'],
                 Date=item['Date'],
                 Unique_squirrel_ID=item['Unique Squirrel ID'],
                 Age=item['Age'],
