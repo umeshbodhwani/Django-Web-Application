@@ -55,3 +55,82 @@ class squirrel(models.Model):
 
     Climbing = models.BooleanField(
             help_text=_('True if squirrel was climbing'))
+
+    Eating = models.BooleanField(
+            help_text=_('True if squirrel was eating'))
+    Foraging = models.BooleanField(
+            help_text=_('True if squirrel was foraging'))
+
+    Other_Activities = models.CharField(
+            help_text=_('Other activity by squirrel'),
+            blank=True)
+
+    Kuks = models.BooleanField(
+            help_text=_('Is  Squirrel kuking'),
+            default=False,
+        )
+
+
+    Quaas = models.BooleanField(
+            help_text=_('Is  Squirrel quaaing'),
+            default=False,
+        )
+
+    Moans = models.BooleanField(
+            help_text=_('Is Squirrel Moaning'),
+            default=False,
+        )
+
+    Tail_flags = models.BooleanField(
+            help_text=_('Is Squirrel flagging tail'),
+            default=False,
+        )
+
+    Tail_twitching = models.BooleanField(
+            help_text=_('Is the Squirrel twitching tail'),
+            default=False,
+        )
+
+    Approaches = models.BooleanField(
+        help_text=_('Is Squirrel approaching human'),
+        default=False,
+        )
+
+    Indifferent = models.BooleanField(
+            help_text=_('Is squirrel indifferent to human'),
+            default=False,
+        )
+    Runs_from = models.BooleanField(
+            help_text=_('Is Squirrel running from human'),
+            default=False,
+        )
+
+    AM = 'AM'
+    PM = 'PM'
+
+    ADULT = 'ADULT'
+    JUVENILE = 'JUVENILE'
+
+    Gray = 'GRAY'
+    Cinnamon = 'CINAMMON'
+    Black = 'BLACK'
+
+
+    AGE_CHOICES = (
+            (ADULT, 'ADULT'),
+            (JUVENILE, 'JUVENILE'),)
+
+    TIME_CHOICES = (
+            (AM, 'AM'),
+            (PM, 'PM'),)
+
+
+    COLOR_CHOICES = (
+            (Gray, 'GRAY'),
+            (Cinnamon, 'CINNAMON'),
+            (Black, 'BLACK'),)
+
+    def __str__(self):
+        return self.Unique_squirrel_ID
+
+
