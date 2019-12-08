@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
+from .forms import SquirrelForm
+
 def main_page(request):
 
      sq = 'Squirrel Tracker'
