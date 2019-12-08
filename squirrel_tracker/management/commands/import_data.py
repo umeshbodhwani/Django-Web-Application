@@ -29,6 +29,7 @@ class Command(BaseCommand):
                 Running=strtobool(item['Running']),
                 Chasing=strtobool(item['Chasing']),
                 Climbing=strtobool(item['Climbing']),
+                Fur_Color = (item['Highlight Fur Color'])
                 Eating=strtobool(item['Eating']),
                 Foraging=strtobool(item['Foraging']),
                 Other_Activities=item['Other Activities'],

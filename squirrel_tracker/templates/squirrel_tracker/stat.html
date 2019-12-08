@@ -2,22 +2,26 @@
 <html>
 	<head>
 		 <title> Stats Page </title>
-		 <a href ='/sightings'>Back to sightings page</a>
-		 <h1 align="center"> This is the Stats Page of Squirrel sightings</h1>
+		 <a href ='/sightings'>Back to Sightings page</a>
+		 <h1 align="center"> Squirrel Stats</h1>
 	</head>
        	<body>
 		<p>
 			<ul>
-				<li> Count of Squirrels Shift:
-					<ul>
-						<li>AM: {{ AM_count }} </li>
-						<li>PM:  {{ PM_count  }} </li>
-																										    				</ul>
-		       		</li> <br>
-				<li>Number of squirrels Running:  {{ Running_count }} </li><br>
-				<li>Number of squirrels Foraging:  {{ Foraging_count }} </li><br>
-				<li>Number of squirrels Approaching:  {{  Approaches_count  }} </li><br>
-				<li> Number of squirrels moaning:  {{Moans_count  }} </li><br>
+				<h2>Basic Info </h2>
+				<li> Total Unique Squirrels: {{ squirrel_count }} </li><br>
+				<h2>Counts based on Activity</h2>
+					<li>Active During Day: {{ AM_count }} </li>
+					<li>Active During Night:  {{ PM_count  }} </li>
+																												    <h2>Counts based on Color</h2>
+					<li>Cinnamon(Camouflage themselves in Fall Leaves): {{Cinnamon_color}} </li>
+					<li>Black(Hard to spot during nights): {{Black_color}}</li>
+
+				<h2>Counts based on Characteristics</h2>
+				<li>Running Squirrels:  {{ Running_count }} </li>
+				<li>Foraging Squirrels:  {{ Foraging_count }} </li>
+				<li>Approaching Squirrels:  {{  Approaches_count  }} </li>
+				<li> Moaning Squirrels:  {{Moans_count  }} </li>
 			</ul>
 		</p>
 	</body>

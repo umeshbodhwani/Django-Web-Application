@@ -25,7 +25,7 @@ class Squirrel(models.Model):
     FUR_COLOR = (
             (Gray, 'GRAY'),
             (Cinnamon, 'CINNAMON'),
-            (Black, 'BLACK'),)
+            (Black, 'BLACK'))
     
     GROUND_PLANE = 'GROUND PLANE'
     ABOVE_GROUND = 'ABOVE GROUND'
