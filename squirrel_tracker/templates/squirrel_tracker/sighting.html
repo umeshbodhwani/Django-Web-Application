@@ -1,0 +1,24 @@
+<!doctype>
+<html>
+	 <head>
+		 <h1>Sightings</h1>
+		 <p><a href = '/'> Back to main page </a></p>
+	  </head>
+	  <body>
+		 <h2> General Stats</h2>
+		 <ul>
+			 <li><p> <a href = '/sightings/stats'> Check this out </a></p></li>
+		 </ul>																						              		  <h2> Spotted a new Squirrel?Add below</h2>
+		 <ul>
+			 <li><p> <a href = '/sightings/add'> Add Sighting </a> </p></li>
+		 </ul>
+			 <h2> List of Little Demons - Click to Edit</h2>
+			 <p>
+				 <ul>
+					 {% for squirrel in squirrels %}
+				       	 <li><a href = '/sightings/{{ squirrel.Unique_squirrel_ID}}'>{{squirrel.Unique_squirrel_ID}}</a></li>
+					 {% endfor %}
+				  </ul>
+			  </p>
+																										  </body>
+</html> 

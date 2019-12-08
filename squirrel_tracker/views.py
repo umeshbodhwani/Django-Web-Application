@@ -7,8 +7,11 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def main_page(request):
-    sq = 'Squirrel Tracker'
-    return render(request, 'squirrel_tracker/main.html',{'Squirrel': sq})
+
+     sq = 'Squirrel Tracker'
+     context = {'Squirrel':sq
+            }
+     return render(request, 'squirrel_tracker/main.html',context)
 
 def map_get(request):
         sighting = Squirrel.objects.all()[:25]
