@@ -16,7 +16,7 @@ def main_page(request):
      return render(request, 'squirrel_tracker/main.html',context)
 
 def map_get(request):
-        sighting = Squirrel.objects.all()[:25]
+        sighting = Squirrel.objects.all()[:100]
         context ={
                 'sightings' :sighting,
                                 }
