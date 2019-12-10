@@ -37,12 +37,14 @@ class Squirrel(models.Model):
     X = models.DecimalField(
             help_text = _('Longitude'),
             max_digits = 20,
+            blank = True,
             decimal_places = 15,
             )
 
     Y = models.DecimalField(
             help_text = _('Latitude'),
             max_digits = 20,
+            blank = True,
             decimal_places = 15,)
 
     Unique_squirrel_ID = models.CharField(
@@ -53,46 +55,58 @@ class Squirrel(models.Model):
     Shift = models.CharField(
             help_text=_('AM or PM'),
             choices = TIME_DAY,
+            blank = True,
             max_length=20,
         )
 
     Date = models.IntegerField(
-            help_text=_('Date when squirrel was spotted'),)
+            help_text=_('Date when squirrel was spotted'),
+            blank = True,
+            null = True,)
 
     Age = models.CharField(
             help_text=_('Adult or Juvenile'),
             choices = AGE_CHOICES,
+            blank = True,
             max_length=20,
         )
 
     Primary_Fur_Color = models.CharField(
             help_text=_('gray, cinnamon or black'),
             choices = FUR_COLOR,
+            blank = True,
             max_length=20,)
 
     Location = models.CharField(
             help_text=_('Ground plane or above ground'),
             choices = LOCATION,
+            blank = True,
             max_length=20,)
 
     Specific_Location = models.CharField(
             help_text=_('Comments on the squirrel location'),
+            blank = True,
             max_length=20,)
 
     Running = models.BooleanField(
-            help_text=_('True if squirrel was running'),)
+            help_text=_('True if squirrel was running'),
+            default=False,)
 
     Chasing = models.BooleanField(
-            help_text=_('True if squirrel was chasing'),)
+            help_text=_('True if squirrel was chasing'),
+            default=False,)
 
     Climbing = models.BooleanField(
-            help_text=_('True if squirrel was climbing'),)
+            help_text=_('True if squirrel was climbing'),
+            default=False,)
 
     Eating = models.BooleanField(
-            help_text=_('True if squirrel was eating'),)
+            help_text=_('True if squirrel was eating'),
+            default=False,)
 
     Foraging = models.BooleanField(
-            help_text=_('True if squirrel was foraging'),)
+            help_text=_('True if squirrel was foraging'),
+            default=False,)
 
     Other_Activities = models.CharField(
             help_text=_('Other activity by squirrel'),
