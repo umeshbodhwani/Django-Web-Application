@@ -2,7 +2,7 @@ This is a Web Application, which plots the location of Squirrels in Central Park
 
 Name of the application: squirrel_tracker
 
-The main page displays the option to see the squirrels on map and also the squirrel data.
+The main page has a Squirrel Plotter and link to view their Sightings. 
 Views:
 
 1. map: Displays the map of Central Park with the location of 100 squirrels.
@@ -27,3 +27,5 @@ Group Info
 Section: sec001
 Name: Project 42
 Members: sc4597 (Sai Varun Challa), ub2140 (Umesh Bodhwani)
+
+App Link : https://tfa-varun.appspot.com/
