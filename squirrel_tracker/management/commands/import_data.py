@@ -17,9 +17,9 @@ class Command(BaseCommand):
 
         for item in sq_data:
             s = Squirrel(
-                    X=item['X'],
-                    Y=item['Y'],
-                    Shift=item['Shift'],
+                X=item['X'],
+                Y=item['Y'],
+                Shift=item['Shift'],
                 Date=item['Date'],
                 Unique_squirrel_ID=item['Unique Squirrel ID'],
                 Age=item['Age'],
