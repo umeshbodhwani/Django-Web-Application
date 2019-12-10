@@ -8,26 +8,33 @@ from django.http import HttpResponse
 
 from .forms import SquirrelForm
 
+
 def main_page(request):
 
      sq = 'Squirrel Tracker'
      context = {'Squirrel':sq
             }
+
      return render(request, 'squirrel_tracker/main.html',context)
+
 
 def map_get(request):
         sighting = Squirrel.objects.all()[:100]
         context ={
                 'sightings' :sighting,
-                                }
+            }
+
         return render(request, 'squirrel_tracker/map.html',context)
+
 
 def sighting_get(request):
     sqs = Squirrel.objects.all()
     context = {
             'squirrels': sqs,
-        }
+            }
+
     return render(request, 'squirrel_tracker/sighting.html',context)
+
 
 def edit_sq(request, Unique_squirrel_ID):
     squirrel = Squirrel.objects.get(Unique_squirrel_ID = Unique_squirrel_ID)
@@ -44,6 +51,7 @@ def edit_sq(request, Unique_squirrel_ID):
 
     return render(request,'squirrel_tracker/edit.html',context)
 
+
 def add_sq(request):
     if request.method == "POST":
         form= SquirrelForm(request.POST)
@@ -55,10 +63,10 @@ def add_sq(request):
     context ={
             'form':form,
         }
+
     return render(request,'squirrel_tracker/edit.html',context)
 
 def stats(request):
-
         
     sq_count = len(Squirrel.objects.all())
     count_am = len(Squirrel.objects.filter(Shift = 'AM'))
