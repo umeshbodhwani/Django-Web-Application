@@ -38,11 +38,11 @@ def edit_sq(request, Unique_squirrel_ID):
             return redirect(f'/sightings')
     else:
         form = SquirrelForm(instance= squirrel)
-        context ={
+    context ={
             'form':form
         }
 
-        return render(request,'squirrel_tracker/edit.html',context)
+    return render(request,'squirrel_tracker/edit.html',context)
 
 def add_sq(request):
     if request.method == "POST":
@@ -50,12 +50,12 @@ def add_sq(request):
         if form.is_valid():
             form.save()
             return redirect(f'/sightings')
-        else:
-            form = SquirrelForm()
-        context ={
+    else:
+        form = SquirrelForm()
+    context ={
             'form':form,
         }
-        return render(request,'squirrel_tracker/edit.html',context)
+    return render(request,'squirrel_tracker/edit.html',context)
 
 def stats(request):
 

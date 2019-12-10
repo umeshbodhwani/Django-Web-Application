@@ -17,19 +17,18 @@ class Command(BaseCommand):
 
         for item in sq_data:
             s = Squirrel(
-                    X=item['X'],
-                    Y=item['Y'],
-                    Shift=item['Shift'],
+                X=item['X'],
+                Y=item['Y'],
+                Shift=item['Shift'],
                 Date=item['Date'],
                 Unique_squirrel_ID=item['Unique Squirrel ID'],
                 Age=item['Age'],
-                Primary_Fur_Color=item['Primary Fur Color'],
                 Location=item['Location'],
                 Specific_Location=item['Specific Location'],
                 Running=strtobool(item['Running']),
                 Chasing=strtobool(item['Chasing']),
                 Climbing=strtobool(item['Climbing']),
-                Fur_Color = (item['Highlight Fur Color'])
+                Primary_Fur_Color = item['Primary Fur Color'],
                 Eating=strtobool(item['Eating']),
                 Foraging=strtobool(item['Foraging']),
                 Other_Activities=item['Other Activities'],
